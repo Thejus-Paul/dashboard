@@ -1,0 +1,129 @@
+.login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-card {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f9fd;
+    color: #5e7488;
+}
+
+.input-card {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.info-card .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.form .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.form .verify {
+    display: flex;
+    flex-direction: column;
+    color: #5e7488;
+}
+
+.verify .link {
+    width: fit-content;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-size: .75rem;
+    padding: 5px;
+    border: 1px solid #ced5db;
+    border-radius: 100px;
+}
+.link svg {
+    fill: #007aff;
+}
+
+.link .secure {
+    color: #007aff;
+}
+.link .hyperlink {
+    margin: 0 .25rem;
+    color: #364254;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.input-box label {
+    color: #5e7488;
+}
+
+.input-box input {
+    margin-top: .5rem;
+    padding: .75rem;
+    border: 1px solid #ced5db;
+    border-radius: 7.5px;
+    font-size: 1rem;
+}
+.input-box input:focus {
+    border: 1px solid #007aff;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 7.5px;
+    background-color: #007aff;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer; 
+}
+.disabled {
+    opacity: 50%;
+}
+
+.additional-features {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: .75rem;
+}
+
+.additional-features a {
+    text-decoration: none;
+    color: #007aff;
+}
+
+@media screen and (max-width: 800px) {
+    .info-card {
+        display: none;
+    }
+    .input-card {
+        width: 100%;
+    }
+    .form {
+        width: 90%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
