@@ -1,0 +1,42 @@
+.catalog {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.catalog .title{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #3e4f6d;
+}
+
+.catalog .subtitle {
+    margin: .5rem;
+    color: #718096;
+}
+
+.catalog .product-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.catalog .input-box {
+    margin-right: 1rem;
+}
+.catalog .submit-btn {
+    padding: .75rem;
+    border-radius: 8px;
+    background-color: #03cf5d;
+    border: 1px solid #03cf5d;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer; 
+}
+.catalog .submit-btn:hover {
+    background-color: #01a749;
+}

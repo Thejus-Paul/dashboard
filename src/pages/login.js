@@ -11,6 +11,7 @@ export default function Login() {
 
     const handleResponse = (e) => {
         e.preventDefault();
+        history.push('/home')
     }
     return(
         <div className="login">

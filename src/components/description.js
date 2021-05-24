@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
 
-const Dashboard = () => {
+const Description = () => {
     const history = useHistory();
     return(
-        <p>Dashboard</p>
+        <p>Description</p>
     )
 }
 
-export default Dashboard;
+export default Description;
