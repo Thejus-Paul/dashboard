@@ -1,19 +1,13 @@
 import './login.css';
 import CustomerServiceImg from './customer-service.png';
 import { useHistory } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Login() {
     const history = useHistory();
 
-    const [emailAddress, SetEmailAddress] = useState('');
-    const [password, SetPassword] = useState('');
-
-    const inValid = password === '' || emailAddress === '';
-
-    useEffect(() => {
-        
-    },[emailAddress,password]);
+    const [emailAddress, SetEmailAddress] = useState("");
+    const [password, SetPassword] = useState("");
 
     const handleResponse = (e) => {
         e.preventDefault();
@@ -55,7 +49,7 @@ export default function Login() {
                             onChange={(e) => SetPassword(e.target.value)}
                             />
                         </div>
-                        <button className={(inValid) ? `login-btn disabled`: `'login-btn`} type="submit">log in</button>
+                        <button className="login-btn" type="submit">log in</button>
                     </form>
                     <div className="additional-features">
                         <a href="/forgot_password">Forgot Password</a>
