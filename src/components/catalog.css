@@ -1,18 +1,18 @@
-.catalog {
+.catalog,.description {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.catalog .title{
+.title{
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
     color: #3e4f6d;
 }
 
-.catalog .subtitle {
+.subtitle {
     margin: .5rem;
     color: #718096;
 }
@@ -27,16 +27,16 @@
 .catalog .input-box {
     margin-right: 1rem;
 }
-.catalog .submit-btn {
+.submit-btn,.clear-btn {
     padding: .75rem;
     border-radius: 8px;
     background-color: #03cf5d;
-    border: 1px solid #03cf5d;
+    border: 1px solid transparent;
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer; 
 }
-.catalog .submit-btn:hover {
+.submit-btn:hover {
     background-color: #01a749;
 }
