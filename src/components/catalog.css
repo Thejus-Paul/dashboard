@@ -1,4 +1,4 @@
-.catalog,.description {
+.catalog, .description, .feedbacks {
     width: 100%;
     display: flex;
     flex-direction: column;

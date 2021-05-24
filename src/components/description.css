@@ -17,7 +17,7 @@
 
 .buttons {
     display: flex;
-    width: 100%;
+    width: max-content;
     justify-content: center;
     align-items: center;
 }
@@ -27,5 +27,7 @@
 
 .clear-btn {
     background-color: #e63d3e !important;
-
+}
+.clear-btn:hover {
+    background-color: #c43434 !important;
 }
