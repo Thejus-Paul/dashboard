@@ -9,6 +9,10 @@ const Queries = () => {
     {
         message: "Can you mention your working hours?",
         api: 'IdWchAkl3C'
+    },
+    {
+        message: "Do you have cashew cookies?",
+        api: 'IdWchAkl3C'
     }
 ]);
     return(
