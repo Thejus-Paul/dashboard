@@ -2,7 +2,6 @@ import { useHistory } from "react-router-dom";
 import './dashboard.css';
 
 const Dashboard = () => {
-    const history = useHistory();
     return(
         <div className="dashboard">
             <div className="row">

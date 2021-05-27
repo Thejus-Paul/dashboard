@@ -6,8 +6,8 @@ import { useState } from 'react';
 export default function Login() {
     const history = useHistory();
 
-    const [emailAddress, SetEmailAddress] = useState("");
-    const [password, SetPassword] = useState("");
+    const [emailAddress, setEmailAddress] = useState("");
+    const [password, setPassword] = useState("");
 
     const handleResponse = (e) => {
         e.preventDefault();
@@ -38,7 +38,7 @@ export default function Login() {
                             aria-label="Enter your Email ID:" 
                             type="email" 
                             name="email"
-                            onChange={(e) => SetEmailAddress(e.target.value)}
+                            onChange={(e) => setEmailAddress(e.target.value)}
                             />
                         </div>
                         <div className="input-box">
@@ -47,7 +47,7 @@ export default function Login() {
                             aria-label="Enter your Password:" 
                             type="password" 
                             name="password" 
-                            onChange={(e) => SetPassword(e.target.value)}
+                            onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                         <button className="login-btn" type="submit">log in</button>
