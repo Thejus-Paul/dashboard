@@ -35,9 +35,9 @@ const Description = () => {
                     aria-label="Enter the Product Description:" 
                     type="text" 
                     name="name"
+                    defaultValue="Loading..."
                     onChange={(e) => setAbstract(e.target.value)}
                     >
-                        Loading...
                     </textarea>
                 </div>
                 <div className="buttons">
