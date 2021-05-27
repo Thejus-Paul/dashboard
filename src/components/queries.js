@@ -20,9 +20,13 @@ const Queries = () => {
             <span className="title">Customer Queries</span>
             <span className="subtitle">The queries that were left unresolved can be found here. You may click <code>Reply</code> to respond to each message.</span>
             <div className="buttons">
-                <button className="outline-btn">WhatsApp</button>
-                <button className="outline-btn">Telegram</button>
-                <button className="outline-btn">Website</button>
+                <button className="outline-btn">Negotiation</button>
+                <button className="outline-btn">Payment</button>
+                <button className="outline-btn">Delivery</button>
+                <button className="outline-btn">Discounts</button>
+                <button className="outline-btn">Quality - Manufacturing</button>
+                <button className="outline-btn">Post Purchase Support</button>
+
             </div>
             <div className="queries-list">            
                 { queries.map((query,index) => {

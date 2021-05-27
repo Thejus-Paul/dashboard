@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cards .sm-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    border-radius: 8px;
+    align-items: center;
+    padding: 1rem;
+}
+.sm-card .value {
+    font-weight: bold;
+}

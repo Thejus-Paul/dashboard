@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, NavLink, useHistory } from 'react-router-dom';
 import './home.css';
-import ProfileImg from './profile_dark.jpg';
 
 import Dashboard from '../components/dashboard';
 import Description from '../components/description'
@@ -18,8 +17,8 @@ const Home = () => {
             <div className="header">
                 <span className="title">SUP PORT</span>
                 <div className="user">
-                    <img className="image" src={ProfileImg} alt="user-icon" />
-                    <span className="name">Your Name</span>
+                    <img className="image" src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fman-profile-cartoon_18591-58482.jpg&f=1&nofb=1`} alt="user-icon" />
+                    <span className="name">John Doe</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg> 
                 </div>
             </div>
@@ -73,6 +72,12 @@ const Home = () => {
                         </Switch>
                     </Router>
                 </div>
+            </div>
+            <div className="footer">
+                <span>
+                    <img src={`https://www.pngrepo.com/png/203226/180/flash-thunder.png`} alt="Powered" />
+                    By SUP PORT
+                </span>
             </div>
         </div>
     );
