@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f4f9fd;
+    background-color: #f3fff8;
     color: #5e7488;
 }
 
@@ -54,11 +54,12 @@
     border-radius: 100px;
 }
 .link svg {
-    fill: #007aff;
+    fill: #03cf5d;
 }
 
 .link .secure {
-    color: #007aff;
+    color: #03cf5d;
+    font-weight: bold;
 }
 .link .hyperlink {
     margin: 0 .25rem;
@@ -83,7 +84,7 @@
     font-size: 1rem;
 }
 .input-box input:focus {
-    border: 1px solid #007aff;
+    border: 1px solid #03cf5d;
 }
 
 .login-btn {
@@ -91,7 +92,7 @@
     margin-top: 2rem;
     padding: .75rem;
     border-radius: 7.5px;
-    background-color: #007aff;
+    background-color: #03cf5d;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer; 
@@ -110,7 +111,7 @@
 
 .additional-features a {
     text-decoration: none;
-    color: #007aff;
+    color: #03cf5d;
 }
 
 @media screen and (max-width: 800px) {

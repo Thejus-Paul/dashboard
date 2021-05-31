@@ -5,33 +5,33 @@ import { useHistory } from 'react-router';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Login(props) {
+export default function Register() {
     const history = useHistory();
-
+    const [username, setUsername] = useState("");
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
 
     const handleResponse = (e) => {
+        console.log(username);
         console.log(emailAddress);
         console.log(password);
         e.preventDefault();
-        fetch("https://sponge-imminent-text.glitch.me/support/login", {
+        fetch("https://sponge-imminent-text.glitch.me/support/register", {
             method: 'post',
             mode: 'cors',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             },
             body: JSON.stringify({
+                username: username,
                 password: password, 
                 email: emailAddress
             })
         }).then(res => res.json())
         .then(res => {
             try {
-                if(res.email === emailAddress && res.password === password) {
-                    window.localStorage.setItem("username", res.username);
-                    history.push('/home');
-                }
+                window.localStorage.setItem("username", username);
+                history.push('/home');
             } catch (error) {
                 console.log(error)
             }
@@ -48,7 +48,7 @@ export default function Login(props) {
             </div>
             <div className="input-card">
                 <div className="form">
-                    <span className="title">Log in</span>
+                    <span className="title">Register</span>
                     <div className="verify">
                         <span className="text">Please check that you are visiting the correct URL.</span>
                         <span className="link">
@@ -57,6 +57,15 @@ export default function Login(props) {
                         </span>
                     </div>
                     <form onSubmit={handleResponse}>
+                        <div className="input-box">
+                            <label htmlFor="username">Username</label>
+                            <input 
+                            aria-label="Enter your Username:" 
+                            type="text" 
+                            name="text"
+                            onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
                         <div className="input-box">
                             <label htmlFor="email">Email</label>
                             <input 
@@ -75,12 +84,11 @@ export default function Login(props) {
                             onChange={(e) => setPassword(CryptoJS.SHA3(CryptoJS.SHA512(e.target.value).toString()).toString())}
                             />
                         </div>
-                        <button className="login-btn" type="submit">Login</button>
+                        <button className="login-btn" type="submit">Register</button>
                     </form>
                     <div className="additional-features">
-                        <a href="/forgot_password">Forgot Password</a>
-                        <span>Not on Sup Port yet?&nbsp;
-                            <NavLink exact to='/register'>Register</NavLink>
+                        <span>Already have an account?&nbsp;
+                            <NavLink exact to='/login'>Login</NavLink>
                         </span>
                     </div>
                 </div>

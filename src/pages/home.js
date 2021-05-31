@@ -9,7 +9,8 @@ import Queries from '../components/queries';
 import ChatBots from '../components/chatBots';
 import Complaints from '../components/complaints';
 
-const Home = () => {
+const Home = (props) => {
+    const username = window.localStorage.getItem("username");
     const history = useHistory();
     
     return(
@@ -18,7 +19,7 @@ const Home = () => {
                 <span className="title">SUP PORT</span>
                 <div className="user">
                     <img className="image" src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fman-profile-cartoon_18591-58482.jpg&f=1&nofb=1`} alt="user-icon" />
-                    <span className="name">John Doe</span>
+                    <span className="name">{username}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg> 
                 </div>
             </div>
