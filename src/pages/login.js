@@ -1,3 +1,4 @@
+import CryptoJS from 'crypto-js';
 import './login.css';
 import CustomerServiceImg from './customer-service.png';
 import { useHistory } from 'react-router';
@@ -10,8 +11,30 @@ export default function Login() {
     const [password, setPassword] = useState("");
 
     const handleResponse = (e) => {
+        console.log(emailAddress);
+        console.log(password);
         e.preventDefault();
-        history.push('/home')
+        fetch("https://sponge-imminent-text.glitch.me/support/login", {
+            method: 'post',
+            mode: 'cors',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+                password: password, 
+                email: emailAddress
+            })
+        }).then(res => res.json())
+        .then(res => {
+            try {
+                if(res.email === emailAddress && res.password === password) {
+                    history.push('/home')
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        });
+        //history.push('/home')
     }
     return(
         <div className="login">
@@ -38,7 +61,7 @@ export default function Login() {
                             aria-label="Enter your Email ID:" 
                             type="email" 
                             name="email"
-                            onChange={(e) => setEmailAddress(e.target.value)}
+                            onChange={(e) => setEmailAddress(CryptoJS.SHA3(CryptoJS.SHA512(e.target.value).toString()).toString())}
                             />
                         </div>
                         <div className="input-box">
@@ -47,7 +70,7 @@ export default function Login() {
                             aria-label="Enter your Password:" 
                             type="password" 
                             name="password" 
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e) => setPassword(CryptoJS.SHA3(CryptoJS.SHA512(e.target.value).toString()).toString())}
                             />
                         </div>
                         <button className="login-btn" type="submit">log in</button>
