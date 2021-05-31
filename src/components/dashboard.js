@@ -100,7 +100,7 @@ const Dashboard = () => {
                 <div className="cards">
                     <div className="satisfaction-card">
                         <span className="title">Customer Satisfaction Score</span>
-                        <BarChart width={550} height={550} data={satisfactionData}>
+                        <BarChart width={325} height={250} data={satisfactionData}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
                             <YAxis />

@@ -40,3 +40,10 @@
 .submit-btn:hover {
     background-color: #01a749;
 }
+
+
+@media screen and (max-width: 800px) {
+    .title {
+        font-size: 1.6rem;
+    }
+}
