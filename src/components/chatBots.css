@@ -1,0 +1,36 @@
+.chatbot-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.chatbot-cards .chatbot {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+    border-radius: 16px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out .1s;
+}
+
+.chatbot-cards .chatbot:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot .image {
+    width: 100px;
+}
+
+.chatbot .name {
+    font-size: 1.4rem;
+}

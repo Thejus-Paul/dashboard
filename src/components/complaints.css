@@ -1,0 +1,36 @@
+.complaints-list {
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.complaints-list .complaint {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ced5db;
+    margin-bottom: 1rem;
+}
+.complaint .header,.complaint .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.complaint .header {
+    background-color: #fefefe;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: 1px solid #ced5db;
+}
+.complaint .body {
+    padding: 1rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+.actions button {
+    margin-left: .5rem;
+}
