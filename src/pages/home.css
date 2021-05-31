@@ -91,3 +91,37 @@
 .footer span img {
     width: 25px;
 }
+
+@media screen and (max-width: 800px) {
+    .container {
+        margin: .25rem;
+    }
+    .main {
+        justify-content: flex-start;
+    }
+    .main .nav {
+        margin:0;
+    }
+    .nav .hyperlink {
+        padding: .5rem;
+    }
+    .hyperlink svg {
+        margin: 0;
+    }
+    .location {
+        display: none;
+    }
+    .active {
+        background-color: #ffffff;
+    }
+    .active svg {
+        fill: #03cf5d;
+    }
+    .main .content {
+        height: 90vh;
+        padding: 1rem .5rem;
+    }
+    .footer {
+        display: none;
+    }
+}
