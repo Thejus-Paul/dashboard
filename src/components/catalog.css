@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: scroll;
 }
 
 .title{
@@ -45,5 +46,23 @@
 @media screen and (max-width: 800px) {
     .title {
         font-size: 1.6rem;
+        text-align: center;
+    }
+    .subtitle {
+        text-align: center;
+    }
+    .catalog .product-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .catalog .input-box {
+        margin-right:0;
+    }
+    .submit-btn {
+        margin-top: 1rem;
+    }
+    .catalog, .description, .feedbacks, .queries, .chatbots, .complaints {
+        padding: 0 .5rem;
+        align-items: center;
     }
 }

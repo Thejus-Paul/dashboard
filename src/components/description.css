@@ -20,6 +20,7 @@
     width: max-content;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .buttons button {
     margin-right: 1rem;
@@ -30,4 +31,16 @@
 }
 .clear-btn:hover {
     background-color: #c43434 !important;
+}
+
+@media screen and (max-width: 800px) {
+    .description-form {
+        width: 100%;
+    }
+    .buttons {
+        width: 100%;
+    }
+    .clear-btn {
+        margin-top: 1rem;
+    }
 }

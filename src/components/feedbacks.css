@@ -15,3 +15,8 @@
     background-color: #03cf5d;
     color: #ffffff;
 }
+@media screen and (max-width: 800px) {
+    .outline-btn {
+        margin-top: 1rem;
+    }
+}

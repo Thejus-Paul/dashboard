@@ -118,7 +118,7 @@
     .info-card {
         display: none;
     }
-    .input-card {
+    .input-card,.input-box {
         width: 100%;
     }
     .form {
