@@ -102,6 +102,9 @@
     }
     .main .nav {
         margin:0;
+        height: 95vh;
+        justify-content: center;
+        align-items: center;
     }
     .nav .hyperlink {
         padding: .5rem;
