@@ -34,3 +34,12 @@
 .chatbot .name {
     font-size: 1.4rem;
 }
+
+@media screen and (max-width: 800px) {
+    .chatbot-cards .chatbot {
+        width: 100%;
+    }
+    .chatbot .image {
+        width: 50px;
+    }
+}

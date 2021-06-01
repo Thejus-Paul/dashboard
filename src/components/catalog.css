@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: scroll;
 }
 
 .title{
@@ -45,5 +46,12 @@
 @media screen and (max-width: 800px) {
     .title {
         font-size: 1.6rem;
+    }
+    .catalog .product-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .submit-btn {
+        margin-top: 1rem;
     }
 }

@@ -29,6 +29,7 @@
 }
 .message em {
     color:#666;
+    font-size: .8rem;
 }
 .queries-list .query:hover {
     border-color: #03cf5d;
