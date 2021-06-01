@@ -118,6 +118,12 @@
 }
 
 @media screen and (max-width: 800px) {
+    .col {
+        align-items: center;
+    }
+    .name-card,.intent-card {
+        width: 95%;
+    }
     .name-card .company-details {
         justify-content: center;
     }

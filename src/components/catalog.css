@@ -54,4 +54,7 @@
     .submit-btn {
         margin-top: 1rem;
     }
+    .catalog, .description, .feedbacks, .queries, .chatbots, .complaints {
+        padding: 0 .5rem;
+    }
 }
