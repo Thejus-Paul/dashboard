@@ -8,6 +8,7 @@ import Feedbacks from '../components/feedbacks';
 import Queries from '../components/queries';
 import ChatBots from '../components/chatBots';
 import Complaints from '../components/complaints';
+import Offers from '../components/offers';
 
 const Home = (props) => {
     const username = window.localStorage.getItem("username");
@@ -40,9 +41,9 @@ const Home = (props) => {
                     <span className="location">Catalog</span>
                     </NavLink>
 
-                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/feedbacks' onClick={() => { history.push('/home/feedbacks'); window.location.reload()}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> 
-                    <span className="location">Returned Orders</span>
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/offers' onClick={() => { history.push('/home/offers'); window.location.reload()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                    <span className="location">Offers</span>
                     </NavLink>
 
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/queries' onClick={() => { history.push('/home/queries'); window.location.reload()}}>
@@ -69,6 +70,7 @@ const Home = (props) => {
                             <Route  path="/home/queries" component={Queries} />
                             <Route  path="/home/chat_bots" component={ChatBots} />
                             <Route  path="/home/complaints" component={Complaints} />
+                            <Route  path="/home/offers" component={Offers} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
                     </Router>
