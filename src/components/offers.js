@@ -93,7 +93,7 @@ const Offers = () => {
                         return(
                             <div className="query" key={index}>
                                 <div className="body">
-                                    <span className="message"><strong>{`${offer.offerName} offer on ${offer.itemName}`}</strong></span>
+                                    <span className="message"><strong>{offer.offerName}</strong> offer on <strong>{offer.itemName}</strong></span>
                                     <span className="offer-description">{offer.description}</span>
                                     <span>Code:<strong>{offer.code}</strong></span>
                                     <div className="actions">
