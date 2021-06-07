@@ -12,8 +12,6 @@ export default function Login(props) {
     const [password, setPassword] = useState("");
 
     const handleResponse = (e) => {
-        console.log(emailAddress);
-        console.log(password);
         e.preventDefault();
         fetch("https://sponge-imminent-text.glitch.me/support/login", {
             method: 'post',

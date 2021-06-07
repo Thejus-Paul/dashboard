@@ -21,6 +21,7 @@
     color: #03cf5d;
 }
 .user {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +32,34 @@
 }
 .user .name {
     margin-left: 0.5rem;
+}
+.additional-settings {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 40px;
+    right: 5px;
+    background: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.additional-settings .setting {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5rem 3rem;
+}
+
+.additional-settings #logout {
+    background-color: #ffcdd2;
+    border-radius: 0 0 16px 16px;
+}
+#logout .name {
+    color: #e63d3e;
+}
+#logout .icon {
+    fill: #e63d3e;
 }
 .main {
     width: 100%;
