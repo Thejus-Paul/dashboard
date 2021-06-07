@@ -1,3 +1,5 @@
+<img src="/public/support.svg" alt="SUP PORT Icon" width="175px" />
+
 # dashboard
 
 A dashboard for SUP PORT.
