@@ -10,6 +10,10 @@ export default function Register() {
     const [username, setUsername] = useState("");
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
+    const isLoggedIn = window.localStorage.getItem("username") ? true : false;
+    if(isLoggedIn) {
+        history.push('/home');
+    }
 
     const handleResponse = (e) => {
         console.log(username);

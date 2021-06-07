@@ -7,6 +7,10 @@ import { NavLink } from 'react-router-dom';
 
 export default function Login(props) {
     const history = useHistory();
+    const isLoggedIn = window.localStorage.getItem("username") ? true : false;
+    if(isLoggedIn) {
+        history.push('/home');
+    }
 
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
