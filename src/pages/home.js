@@ -9,6 +9,7 @@ import Queries from '../components/queries';
 import ChatBots from '../components/chatBots';
 import Complaints from '../components/complaints';
 import Offers from '../components/offers';
+import Subscriptions from '../components/subscriptions';
 import { useState } from 'react';
 
 const Home = (props) => {
@@ -81,9 +82,9 @@ const Home = (props) => {
                     <span className="location">Queries</span>
                     </NavLink>
 
-                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/chat_bots' onClick={() => { history.push('/home/chat_bots'); window.location.reload()}}>
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/subscriptions' onClick={() => { history.push('/home/subscriptions'); window.location.reload()}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg> 
-                    <span className="location">Chat Bots</span>
+                    <span className="location">Subscriptions</span>
                     </NavLink>
 
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/complaints' onClick={() => { history.push('/home/complaints'); window.location.reload()}}>
@@ -100,6 +101,7 @@ const Home = (props) => {
                             <Route  path="/home/queries" component={Queries} />
                             <Route  path="/home/chat_bots" component={ChatBots} />
                             <Route  path="/home/complaints" component={Complaints} />
+                            <Route  path="/home/subscriptions" component={Subscriptions} />
                             <Route  path="/home/offers" component={Offers} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
