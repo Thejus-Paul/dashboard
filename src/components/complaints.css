@@ -31,6 +31,3 @@
     display: flex;
     justify-content: space-between;
 }
-.actions button {
-    margin-left: .5rem;
-}
