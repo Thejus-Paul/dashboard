@@ -1,51 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './queries.css';
 
 const Queries = () => {
-    const [queries, setQueries] = useState([{
-        message: "What are your offers?",
-        time: 1622255697778
-    },
-    {
-        message: "Can you mention all discounts you provide?",
-        time: 1522255497778
-    },
-    {
-        message: "Can I order online?",
-        time: 1522255597778
-    },
-    {
-        message: "Can you mention your working hours?",
-        time: 1522255697778
-    },
-    {
-        message: "Do you have cashew cookies?",
-        time: 1422255697778
-    }
-]);
+    const [queries, setQueries] = useState([]);
+    useEffect(() => {
+        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/queries')
+        .then(response => response.json())
+        .then(response => setQueries((response.queries).reverse()));
+    }, [queries]);
+
     return(
         <div className="queries">
             <span className="title">Customer Queries</span>
-            <span className="subtitle">The queries that were left unresolved can be found here. You may click <code>Reply</code> to respond to each message.</span>
-            {/* <div className="buttons">
-                <button className="outline-btn">Negotiation</button>
-                <button className="outline-btn">Payment</button>
-                <button className="outline-btn">Delivery</button>
-                <button className="outline-btn">Discounts</button>
-                <button className="outline-btn">Quality - Manufacturing</button>
-                <button className="outline-btn">Post Purchase Support</button>
-
-            </div> */}
+            <span className="subtitle">The queries that were left unresolved can be found here. You can call the customer to resolve their queries. You may also update the abstract for the future customers.</span>
             <div className="queries-list">            
-                { queries.map((query,index) => {
+                { queries.length > 0 ? queries.map((query,index) => {
                         return(
                             <div className="query" key={index}>
                                 <div className="body">
                                     <span className="message">
-                                        <span>{query.message}</span> - <em>{new Date(query.time).toGMTString()}</em></span>
+                                        <span>{query.unanswered_qa_text}</span> - {query.customer_name} <em>{new Date(query.time).toGMTString()}</em></span>
+                                        <a href={`tel:${query.customer_mob_no}`} className="outline-btn">Call</a>
                                 </div>
                             </div>
-                        )})
+                        )}) : <em>Either the query list is being fetched OR there aren't any queries at the moment.</em>
                 }
             </div>
         </div>
