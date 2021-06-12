@@ -8,7 +8,7 @@ const Catalog = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/catalog')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/catalog`)
         .then(response => response.json())
         .then(response => setItems(response.items));
     }, [items]);
@@ -21,7 +21,7 @@ const Catalog = () => {
             "quantity": quantity
         }
         items.push(newItem);
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/catalog", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/catalog`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -33,7 +33,7 @@ const Catalog = () => {
 
     const deleteItem = (index) => {
         items.splice(index, 1);
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/catalog", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/catalog`, {
             method: 'post',
             mode: 'cors',
             headers: {

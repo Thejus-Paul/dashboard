@@ -3,10 +3,15 @@ import './description.css';
 
 const Description = () => {
     const [abstract, setAbstract] = useState("");
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/description`)
+        .then(response => response.json())
+        .then(response => document.getElementsByClassName('description-box')[0].value = response.abstract);
+    }, []);
     
     const handleResponse = (event) => {
         event.preventDefault();
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/description", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/description`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -15,14 +20,7 @@ const Description = () => {
             body: JSON.stringify({data: abstract})
         }).then(console.log("Updated!"));
     }
-
-    useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/description')
-        .then(response => response.json())
-        .then(response => document.getElementsByClassName('description-box')[0].value = response.abstract);
-    }, []);
-
-
+        
     return(
         <div className="description">
             <span className="title">Product Description</span>

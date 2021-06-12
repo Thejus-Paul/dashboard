@@ -9,7 +9,7 @@ const Offers = () => {
     const [code, setCode] = useState("");
 
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/offers')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/offers`)
         .then(response => response.json())
         .then(response => setOffers(response.offers));
     }, [offers]);
@@ -23,7 +23,7 @@ const Offers = () => {
             "code": code
         }
         offers.push(newOffer);
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/offers", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/offers`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -35,7 +35,7 @@ const Offers = () => {
 
     const deleteItem = (index) => {
         offers.splice(index, 1);
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/offers", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/offers`, {
             method: 'post',
             mode: 'cors',
             headers: {

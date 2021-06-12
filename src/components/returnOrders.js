@@ -4,7 +4,7 @@ import './queries.css';
 const ReturnOrders = () => {
     const [returns, setReturns] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/returns')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/returns`)
         .then(response => response.json())
         .then(response => setReturns((response.orders).reverse()));
     }, [returns]);
@@ -14,7 +14,7 @@ const ReturnOrders = () => {
         returns.splice(index,1);
         updatedReturns["status"] = "Approved";
         returns.push(updatedReturns)
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/returns", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/returns`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -29,7 +29,7 @@ const ReturnOrders = () => {
         returns.splice(index,1);
         updatedReturns["status"] = "Discarded";
         returns.push(updatedReturns)
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/returns", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/returns`, {
             method: 'post',
             mode: 'cors',
             headers: {

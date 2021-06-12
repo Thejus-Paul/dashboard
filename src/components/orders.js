@@ -6,7 +6,7 @@ const Orders = () => {
     const purchasable_items = ['Capsicum','Green Peace','Heinz Tomato Ketchup','India Gate Basmati Rice Pouch','Kabuli Chana','Maggie Instant Noodles'];
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/orders')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/orders`)
         .then(response => response.json())
         .then(response => setOrders(response.orders));
     }, [orders]);

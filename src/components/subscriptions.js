@@ -4,10 +4,11 @@ import './queries.css';
 const Subscriptions = () => {
     const [subscriptions, setSubscriptions] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/subscriptions')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/subscriptions`)
         .then(response => response.json())
         .then(response => setSubscriptions(response.users));
     }, [subscriptions]);
+    
     return(
         <div className="queries">
             <span className="title">Subscriptions</span>
