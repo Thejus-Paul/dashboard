@@ -1,4 +1,4 @@
-.catalog, .description, .feedbacks, .queries, .chatbots, .complaints {
+.catalog, .description, .feedbacks, .queries, .chatbots, .complaints, .orders {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@
     .submit-btn {
         margin-top: 1rem;
     }
-    .catalog, .description, .feedbacks, .queries, .chatbots, .complaints {
+    .catalog, .description, .feedbacks, .queries, .chatbots, .complaints, .offers, .orders {
         padding: 0 .5rem;
         align-items: center;
     }
