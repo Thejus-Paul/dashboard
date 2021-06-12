@@ -10,6 +10,8 @@ import ChatBots from '../components/chatBots';
 import Complaints from '../components/complaints';
 import Offers from '../components/offers';
 import Subscriptions from '../components/subscriptions';
+import ReturnOrders from '../components/returnOrders';
+import CancelOrders from '../components/cancelOrders';
 import { useState } from 'react';
 
 const Home = (props) => {
@@ -82,6 +84,16 @@ const Home = (props) => {
                     <span className="location">Queries</span>
                     </NavLink>
 
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/return_orders' onClick={() => { history.push('/home/return_orders'); window.location.reload()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                    <span className="location">Returns</span>
+                    </NavLink>
+
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/cancel_orders' onClick={() => { history.push('/home/cancel_orders'); window.location.reload()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18"><path d="M9 1C4.58 1 1 4.58 1 9s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4 10.87L11.87 13 9 10.13 6.13 13 5 11.87 7.87 9 5 6.13 6.13 5 9 7.87 11.87 5 13 6.13 10.13 9 13 11.87z"/></svg>
+                    <span className="location">Cancellations</span>
+                    </NavLink>
+
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/subscriptions' onClick={() => { history.push('/home/subscriptions'); window.location.reload()}}>
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
                     <span className="location">Subscriptions</span>
@@ -95,14 +107,16 @@ const Home = (props) => {
                 <div className="content">
                     <Router>
                         <Switch>
-                            <Route  path="/home/description" component={Description} />
-                            <Route  path="/home/catalog" component={Catalog} />
-                            <Route  path="/home/feedbacks" component={Feedbacks} />
-                            <Route  path="/home/queries" component={Queries} />
-                            <Route  path="/home/chat_bots" component={ChatBots} />
-                            <Route  path="/home/complaints" component={Complaints} />
-                            <Route  path="/home/subscriptions" component={Subscriptions} />
-                            <Route  path="/home/offers" component={Offers} />
+                            <Route path="/home/description" component={Description} />
+                            <Route path="/home/catalog" component={Catalog} />
+                            <Route path="/home/feedbacks" component={Feedbacks} />
+                            <Route path="/home/queries" component={Queries} />
+                            <Route path="/home/chat_bots" component={ChatBots} />
+                            <Route path="/home/complaints" component={Complaints} />
+                            <Route path="/home/subscriptions" component={Subscriptions} />
+                            <Route path="/home/offers" component={Offers} />
+                            <Route path="/home/return_orders" component={ReturnOrders} />
+                            <Route path="/home/cancel_orders" component={CancelOrders} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
                     </Router>
