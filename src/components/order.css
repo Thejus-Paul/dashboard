@@ -1,0 +1,31 @@
+.orders-list {
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.orders-list .order {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ced5db;
+    margin-bottom: 1rem;    
+}
+.order .basic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.order .basic span {
+    margin-bottom: .5rem;
+}
+
+.order-items {
+    border: none;
+    border: 1px solid #ced5db;
+}
+.order-items thead{
+    background-color: #ced5db;
+}
