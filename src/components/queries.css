@@ -36,8 +36,8 @@
     border-color: #03cf5d;
     background-color: #c7ffdf;
 }   
-@media screen and (max-width: 800px) {
-    .body .actions {
-        display: flex;
-    }
+.body .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
