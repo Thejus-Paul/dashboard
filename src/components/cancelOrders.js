@@ -4,7 +4,7 @@ import './queries.css';
 const CancelOrders = () => {
     const [cancellations, setCancellations] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/cancellations')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/cancellations`)
         .then(response => response.json())
         .then(response => setCancellations((response.orders).reverse()));
     }, [cancellations]);
@@ -14,7 +14,7 @@ const CancelOrders = () => {
         cancellations.splice(index,1);
         updatedReturns["status"] = "Approved";
         cancellations.push(updatedReturns)
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/cancellations", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/cancellations`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -29,7 +29,7 @@ const CancelOrders = () => {
         cancellations.splice(index,1);
         updatedReturns["status"] = "Discarded";
         cancellations.push(updatedReturns)
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/cancellations", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/cancellations`, {
             method: 'post',
             mode: 'cors',
             headers: {

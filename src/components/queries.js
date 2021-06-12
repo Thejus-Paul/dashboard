@@ -4,14 +4,14 @@ import './queries.css';
 const Queries = () => {
     const [queries, setQueries] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/queries')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/queries`)
         .then(response => response.json())
         .then(response => setQueries((response.queries).reverse()));
     }, [queries]);
 
     const deleteItem = (index) => {
         queries.splice(index, 1);
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/queries", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/queries`, {
             method: 'post',
             mode: 'cors',
             headers: {

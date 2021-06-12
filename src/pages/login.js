@@ -17,7 +17,7 @@ export default function Login(props) {
 
     const handleResponse = (e) => {
         e.preventDefault();
-        fetch("https://sponge-imminent-text.glitch.me/support/login", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/support/login`, {
             method: 'post',
             mode: 'cors',
             headers: {

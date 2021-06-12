@@ -16,11 +16,8 @@ export default function Register() {
     }
 
     const handleResponse = (e) => {
-        console.log(username);
-        console.log(emailAddress);
-        console.log(password);
         e.preventDefault();
-        fetch("https://sponge-imminent-text.glitch.me/support/register", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/support/register`, {
             method: 'post',
             mode: 'cors',
             headers: {

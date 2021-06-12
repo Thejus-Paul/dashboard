@@ -4,7 +4,7 @@ import './complaints.css';
 const Complaints = () => {
     const [complaints, setComplaints] = useState([]);
     useEffect(() => {
-        fetch('https://sponge-imminent-text.glitch.me/cookiepoint/complaints')
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/complaints`)
         .then(response => response.json())
         .then(response => setComplaints(response.complaints));
     }, [complaints]);
@@ -14,7 +14,7 @@ const Complaints = () => {
         complaints.splice(index,1);
         updatedReturns["isClosed"] = "true";
         complaints.push(updatedReturns)
-        fetch("https://sponge-imminent-text.glitch.me/cookiepoint/complaints", {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/complaints`, {
             method: 'post',
             mode: 'cors',
             headers: {
