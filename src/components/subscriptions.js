@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import CsvDownload from 'react-json-to-csv';
 import './queries.css';
 
 const Subscriptions = () => {
@@ -24,6 +25,10 @@ const Subscriptions = () => {
                             </div>
                         )}) : <p>Either the subscribers list is being fetched OR there aren't any subscribers.</p>
                 }
+                 <CsvDownload className="submit-btn buttons" data={subscriptions} >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Generate CSV
+                 </CsvDownload>
             </div>
         </div>
     )
