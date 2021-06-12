@@ -10,6 +10,7 @@ import ChatBots from '../components/chatBots';
 import Complaints from '../components/complaints';
 import Offers from '../components/offers';
 import Subscriptions from '../components/subscriptions';
+import ReturnOrCancelOrder from '../components/ReturnOrCancelOrder';
 import { useState } from 'react';
 
 const Home = (props) => {
@@ -82,6 +83,11 @@ const Home = (props) => {
                     <span className="location">Queries</span>
                     </NavLink>
 
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/return_cancel' onClick={() => { history.push('/home/return_cancel'); window.location.reload()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18"><path d="M9 1C4.58 1 1 4.58 1 9s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4 10.87L11.87 13 9 10.13 6.13 13 5 11.87 7.87 9 5 6.13 6.13 5 9 7.87 11.87 5 13 6.13 10.13 9 13 11.87z"/></svg>
+                    <span className="location">Return/Cancel</span>
+                    </NavLink>
+
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/subscriptions' onClick={() => { history.push('/home/subscriptions'); window.location.reload()}}>
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
                     <span className="location">Subscriptions</span>
@@ -95,14 +101,15 @@ const Home = (props) => {
                 <div className="content">
                     <Router>
                         <Switch>
-                            <Route  path="/home/description" component={Description} />
-                            <Route  path="/home/catalog" component={Catalog} />
-                            <Route  path="/home/feedbacks" component={Feedbacks} />
-                            <Route  path="/home/queries" component={Queries} />
-                            <Route  path="/home/chat_bots" component={ChatBots} />
-                            <Route  path="/home/complaints" component={Complaints} />
-                            <Route  path="/home/subscriptions" component={Subscriptions} />
-                            <Route  path="/home/offers" component={Offers} />
+                            <Route path="/home/description" component={Description} />
+                            <Route path="/home/catalog" component={Catalog} />
+                            <Route path="/home/feedbacks" component={Feedbacks} />
+                            <Route path="/home/queries" component={Queries} />
+                            <Route path="/home/chat_bots" component={ChatBots} />
+                            <Route path="/home/complaints" component={Complaints} />
+                            <Route path="/home/subscriptions" component={Subscriptions} />
+                            <Route path="/home/offers" component={Offers} />
+                            <Route path="/home/return_cancel" component={ReturnOrCancelOrder} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
                     </Router>
