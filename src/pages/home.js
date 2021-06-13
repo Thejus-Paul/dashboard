@@ -13,6 +13,7 @@ import Subscriptions from '../components/subscriptions';
 import ReturnOrders from '../components/returnOrders';
 import CancelOrders from '../components/cancelOrders';
 import Orders from '../components/orders';
+import Negotiations from '../components/negotiations';
 import { useState } from 'react';
 
 const Home = (props) => {
@@ -105,6 +106,11 @@ const Home = (props) => {
                         <span className="location">Subscriptions</span>
                     </NavLink>
 
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/negotiations' onClick={() => { history.push('/home/negotiations'); window.location.reload()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18"><path d="M13 9H9v4h4V9zm2-7h-1V1h-2v1H6V1H4v1H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H4V6h10v8z"/></svg>
+                        <span className="location">Negotiations</span>
+                    </NavLink>
+
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/complaints' onClick={() => { history.push('/home/complaints'); window.location.reload()}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>  
                         <span className="location">Complaints</span>
@@ -124,6 +130,7 @@ const Home = (props) => {
                             <Route path="/home/return_orders" component={ReturnOrders} />
                             <Route path="/home/cancel_orders" component={CancelOrders} />
                             <Route path="/home/orders" component={Orders} />
+                            <Route path="/home/negotiations" component={Negotiations} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
                     </Router>
