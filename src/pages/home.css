@@ -134,6 +134,7 @@
         height: 95vh;
         justify-content: center;
         align-items: center;
+        overflow: scroll;
     }
     .nav .hyperlink {
         padding: .5rem;
