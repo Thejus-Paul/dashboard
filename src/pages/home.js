@@ -14,6 +14,7 @@ import ReturnOrders from '../components/returnOrders';
 import CancelOrders from '../components/cancelOrders';
 import Orders from '../components/orders';
 import Negotiations from '../components/negotiations';
+import SafeVisit from '../components/safeVisit';
 import { useState } from 'react';
 
 const Home = (props) => {
@@ -107,9 +108,15 @@ const Home = (props) => {
                     </NavLink>
 
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/negotiations' onClick={() => { history.push('/home/negotiations'); window.location.reload()}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18"><path d="M13 9H9v4h4V9zm2-7h-1V1h-2v1H6V1H4v1H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H4V6h10v8z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18"><path d="M13 9H9v4h4V9zm2-7h-1V1h-2v1H6V1H4v1H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H4V6h10v8z"/></svg>
                         <span className="location">Negotiations</span>
                     </NavLink>
+
+                    <NavLink exact className="hyperlink" activeClassName="active" to='/home/safe_visit' onClick={() => { history.push('/home/safe_visit'); window.location.reload()}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>								
+                        <span className="location">Safe Visit</span>
+                    </NavLink>
+
 
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home/complaints' onClick={() => { history.push('/home/complaints'); window.location.reload()}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>  
@@ -131,6 +138,7 @@ const Home = (props) => {
                             <Route path="/home/cancel_orders" component={CancelOrders} />
                             <Route path="/home/orders" component={Orders} />
                             <Route path="/home/negotiations" component={Negotiations} />
+                            <Route path="/home/safe_visit" component={SafeVisit} />
                             <Route exact path="/home/" component={Dashboard} />
                         </Switch>
                     </Router>
