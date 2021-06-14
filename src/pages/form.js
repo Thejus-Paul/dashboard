@@ -40,7 +40,7 @@ export default function Form() {
                     "Content-type": "application/json; charset=UTF-8"
                 },
                 body: JSON.stringify(newOrderList)
-            }).then(console.log("Done!"));
+            }).then(window.alert("Order has been placed. You may now close this window."));
         } else {
             let newOrder = {}
             for(let item = 0; item < (e.target.length - 1); ++item) {
@@ -50,7 +50,7 @@ export default function Form() {
             for(let item of items) {
                 total += (newOrder[item.name]) * item.price;
             }
-            newOrder["order_no"] = liveOrders.length + 1;
+            newOrder["order_id"] = liveOrders.length + 1;
             newOrder["order_status"] = "Open";
             console.log(newOrder);
             setTotal(total);

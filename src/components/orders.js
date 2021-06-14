@@ -8,7 +8,7 @@ const Orders = () => {
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/live_orders`)
         .then(response => response.json())
-        .then(response => setOrders(response.orders));
+        .then(response => setOrders((response.orders).reverse()));
 
         fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/catalog`)
         .then(response => response.json())
@@ -25,7 +25,7 @@ const Orders = () => {
                         return(
                             <div className="order" key={index}>
                                 <div className="basic">
-                                    <span><strong>Order Number:</strong> #{order['order_no']}</span>
+                                    <span><strong>Order Number:</strong> #{order['order_id']}</span>
                                     <span><strong>Order Status:</strong> {order['order_status']}</span>
                                     <span><strong>Name:</strong> {order['name']}</span>
                                     <span><strong>Address:</strong> {order['address']}</span>
