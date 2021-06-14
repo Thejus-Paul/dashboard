@@ -13,24 +13,23 @@ const Negotiation = () => {
         }
     ]);
 
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`)
+        .then(response => response.json())
+        .then(response => setAvailableTimings(response.timings));
+    }, [availableTimings]);
+
     const handleResponse = (event) => {
         event.preventDefault();
-        let currentData = [...availableTimings]
-        console.log(selectedDate)
-        if(typeof(selectedDate) === "number") {
-            currentData.push({time: selectedDate});
-        } else {
-            currentData.push({time: selectedDate.ts});
-        }
-        setAvailableTimings(currentData)
-        /* fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`, {
+        availableTimings.push(typeof(selectedDate) === "number" ? {time: selectedDate} : {time: selectedDate.ts});
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`, {
             method: 'post',
             mode: 'cors',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             },
-            body: JSON.stringify(negotiations)
-        }).then(setNegotiations(negotiations)); */
+            body: JSON.stringify(availableTimings)
+        }).then(setAvailableTimings(availableTimings));
     }
     
     /* useEffect(() => {
@@ -42,7 +41,7 @@ const Negotiation = () => {
     return(
         <div className="queries">
             <span className="title">Customer Negotiations</span>
-            <span className="subtitle">This page lets you see all the subscribers who opted for notifications of new offers.</span>
+            <span className="subtitle">Your upcoming customer negotiations can be found here.</span>
             <div className="queries-list">
             <form className="product-form" onSubmit={handleResponse}>
                 <DateTimePicker
@@ -64,17 +63,17 @@ const Negotiation = () => {
                                     </span>
                                 </div>
                             </div>
-                        )}) : <p>Either the subscribers list is being fetched OR there aren't any subscribers.</p>
+                        )}) : <p>Either the available timings are being fetched OR there aren't any.</p>
                 }
                 <hr />
-                <span className="subtitle">Booked Details</span>
+                <span className="subtitle">Upcoming Schedule</span>
                 { bookedTimings.length > 0 ? bookedTimings.map((data,index) => {
                         return(
                             <div className="query" key={index}>
                                 <div className="body">
                                     <span className="message">
                                         <span>
-                                            <strong>{data.customer_name}</strong> booked a meeting at </span>
+                                            A meeting has been scheduled with <strong>{data.customer_name}</strong> at </span>
                                             {`${new Date(data.time).toDateString()} ${new Date(data.time).getHours()}:${new Date(data.time).getMinutes()}`} &nbsp;
                                     </span>
                                     <div className="actions">
@@ -84,7 +83,7 @@ const Negotiation = () => {
                                     </div>
                                 </div>
                             </div>
-                        )}) : <p>Either the subscribers list is being fetched OR there aren't any subscribers.</p>
+                        )}) : <em>Either the upcoming negotiations are being fetched OR there aren't any.</em>
                 }
             </div>
         </div>
