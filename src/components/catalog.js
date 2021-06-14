@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './catalog.css';
 
 const Catalog = () => {
+    const [URL, setURL] = useState("");
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(0);
@@ -48,6 +49,15 @@ const Catalog = () => {
             <span className="title">Product Catalog</span>
             <span className="subtitle">Create your product catalog here.</span>
             <form className="product-form" onSubmit={handleResponse}>
+                <div className="input-box">
+                    <label htmlFor="url">Product Image URL</label>
+                    <input 
+                    aria-label="Enter the Product Image URL:" 
+                    type="text" 
+                    name="url"
+                    onChange={(e) => setURL(e.target.value)}
+                    />
+                </div>
                 <div className="input-box">
                     <label htmlFor="name">Product Name</label>
                     <input 
