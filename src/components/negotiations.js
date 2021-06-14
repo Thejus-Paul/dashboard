@@ -5,25 +5,19 @@ import './queries.css';
 const Negotiation = () => {
     const [selectedDate, handleDateChange] = useState(new Date().getTime());
     const [availableTimings, setAvailableTimings] = useState([]);
-    const [bookedTimings, setBookedTimings] = useState([
-        {
-            "customer_name":"Vishnu Pradeep",
-            "customer_mob_no": 9633009041,
-            "time": 1624095600000
-        }
-    ]);
+    const [bookedTimings, setBookedTimings] = useState([]);
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available`)
         .then(response => response.json())
         .then(response => setAvailableTimings(response.timings));
     }, [availableTimings]);
-/* 
+
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available`)
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`)
         .then(response => response.json())
-        .then(response => setAvailableTimings(response.timings));
-    }, [availableTimings]); */
+        .then(response => setBookedTimings(response.users));
+    }, [bookedTimings]);
 
     const handleResponse = (event) => {
         event.preventDefault();
