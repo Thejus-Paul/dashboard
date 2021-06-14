@@ -14,15 +14,21 @@ const Negotiation = () => {
     ]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`)
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available`)
         .then(response => response.json())
         .then(response => setAvailableTimings(response.timings));
     }, [availableTimings]);
+/* 
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available`)
+        .then(response => response.json())
+        .then(response => setAvailableTimings(response.timings));
+    }, [availableTimings]); */
 
     const handleResponse = (event) => {
         event.preventDefault();
         availableTimings.push(typeof(selectedDate) === "number" ? {time: selectedDate} : {time: selectedDate.ts});
-        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/negotiations`, {
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available`, {
             method: 'post',
             mode: 'cors',
             headers: {
@@ -31,12 +37,6 @@ const Negotiation = () => {
             body: JSON.stringify(availableTimings)
         }).then(setAvailableTimings(availableTimings));
     }
-    
-    /* useEffect(() => {
-        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/subscriptions`)
-        .then(response => response.json())
-        .then(response => setSubscriptions(response.users));
-    }, [subscriptions]); */
     
     return(
         <div className="queries">
