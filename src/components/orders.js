@@ -3,12 +3,16 @@ import './catalog.css';
 import './order.css';
 
 const Orders = () => {
-    const purchasable_items = ['Capsicum','Green Peace','Heinz Tomato Ketchup','India Gate Basmati Rice Pouch','Kabuli Chana','Maggie Instant Noodles'];
     const [orders, setOrders] = useState([]);
+    const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/orders`)
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/live_orders`)
         .then(response => response.json())
         .then(response => setOrders(response.orders));
+
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/catalog`)
+        .then(response => response.json())
+        .then(response => setItems(response.items));
     }, [orders]);
 
     return(
@@ -21,10 +25,12 @@ const Orders = () => {
                         return(
                             <div className="order" key={index}>
                                 <div className="basic">
-                                    <span><strong>Name:</strong> {order['Tell us your Name ']}</span>
-                                    <span><strong>Address:</strong> {order['Tell us your expected delivery address']}</span>
-                                    <span><strong>Contact Number:</strong> {order['Phone Number']}</span>
-                                    <span><strong>Expected Delivery Time:</strong> {order['Expected Delivery time']}</span>
+                                    <span><strong>Order Number:</strong> #{order['order_no']}</span>
+                                    <span><strong>Order Status:</strong> {order['order_status']}</span>
+                                    <span><strong>Name:</strong> {order['name']}</span>
+                                    <span><strong>Address:</strong> {order['address']}</span>
+                                    <span><strong>Contact Number:</strong> {order['mobile number']}</span>
+                                    <span><strong>Expected Delivery Time:</strong> {`${order['preferable delivery date']}  ${order['preferable delivery time']}`}</span>
                                 </div>
                                 <table className="order-items">
                                     <thead>
@@ -35,12 +41,12 @@ const Orders = () => {
                                     </thead>
                                     <tbody>
                                     {
-                                        purchasable_items.map((item,index) => {
+                                        items.map((item,index) => {
                                             if(order[item] !== '') {
                                                 return(
                                                     <tr key={index}>
-                                                        <td>{item}</td>
-                                                        <td>{order[item]}</td>
+                                                        <td>{item.name}</td>
+                                                        <td>{order[item.name]}</td>
                                                     </tr>
                                                 )
                                             }
