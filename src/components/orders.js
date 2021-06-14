@@ -30,7 +30,7 @@ const Orders = () => {
                                     <span><strong>Name:</strong> {order['name']}</span>
                                     <span><strong>Address:</strong> {order['address']}</span>
                                     <span><strong>Contact Number:</strong> {order['mobile number']}</span>
-                                    <span><strong>Expected Delivery Time:</strong> {order['preferable delivery time']}</span>
+                                    <span><strong>Expected Delivery Time:</strong> {`${order['preferable delivery date']}  ${order['preferable delivery time']}`}</span>
                                 </div>
                                 <table className="order-items">
                                     <thead>
