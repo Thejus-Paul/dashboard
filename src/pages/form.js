@@ -106,7 +106,7 @@ export default function Form() {
                                     <div className="input-box" key={index}>
                                         <label htmlFor={item.name}>
                                             <img 
-                                            src={item.image} 
+                                            src={item.URL} 
                                             width="200px"
                                             alt={item.name}
                                             /><br/>{`Price: Rs.${item.price}`}&nbsp;&nbsp;&nbsp;&nbsp;{`Quantity Left: ${item.quantity}`}<br/><br/>
