@@ -17,6 +17,7 @@ const Catalog = () => {
     const handleResponse = (event) => {
         event.preventDefault();
         let newItem = {
+            "URL": URL,
             "name": name,
             "price": price,
             "quantity": quantity
@@ -94,6 +95,7 @@ const Catalog = () => {
                         return(
                             <div className="query" key={index}>
                                 <div className="body">
+                                    <img src={item.URL} width="50px" />
                                     <span className="message"><strong>{`${item.name} - Rs.${item.price}`}</strong>&nbsp;&nbsp;&nbsp;{`Qty: ${item.quantity}`}</span>
                                     <div className="actions">
                                         <button style={{backgroundColor: 'transparent'}} onClick={() => deleteItem(index)}>
