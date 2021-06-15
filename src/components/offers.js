@@ -46,7 +46,7 @@ const Offers = () => {
     }
 
     return(
-        <div className="catalog">
+        <div className="catalog no-scroll">
             <span className="title">Product Offers</span>
             <span className="subtitle">All the offers for your customers can be added here.</span>
             <form className="product-form" onSubmit={handleResponse}>

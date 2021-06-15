@@ -60,9 +60,9 @@ export default function Form() {
         //history.push('/home')
     }
     return(
-        <div className="login padding-top-2 scroll">
+        <div className="login padding-top-2 scroll no-scroll">
             <div className="input-card">
-                <div className="form forms">
+                <div className="form forms ">
                     <span className="title">Order Form</span><br/>
                     <form onSubmit={handleResponse}>
                         {

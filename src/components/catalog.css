@@ -5,7 +5,13 @@
     align-items: flex-start;
     overflow-y: scroll;
 }
-
+.no-scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.no-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
 .title{
     font-size: 2rem;
     font-weight: bold;

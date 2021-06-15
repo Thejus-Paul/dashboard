@@ -16,7 +16,7 @@ const Orders = () => {
     }, [orders]);
 
     return(
-        <div className="orders">
+        <div className="orders no-scroll">
             <span className="title">Orders</span>
             <span className="subtitle">All the live orders can be found here.</span>
 

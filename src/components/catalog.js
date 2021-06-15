@@ -46,7 +46,7 @@ const Catalog = () => {
     }
 
     return(
-        <div className="catalog">
+        <div className="catalog no-scroll">
             <span className="title">Product Catalog</span>
             <span className="subtitle">Create your product catalog here.</span>
             <form className="product-form" onSubmit={handleResponse}>

@@ -44,7 +44,7 @@ const Dashboard = () => {
       ];
       
     return(
-        <div className="dashboard">
+        <div className="dashboard no-scroll">
             <div className="col">
                 <span className="title">Welcome {username.split(' ')[0]}!</span>
                 <div className="cards">
@@ -52,20 +52,6 @@ const Dashboard = () => {
                         <span className="company-details">
                             <img className="icon" src={CookiesIcon} alt="CookiePoint Icon" />
                             <span className="name">Cookie Point</span>
-                        </span>
-                        <span className="chat-bots">
-                            <div className="chat-bot">
-                                <img className="icon" src={WhatsAppIcon} alt="WhatsApp" />
-                                <span>Enabled</span>
-                            </div>
-                            <div className="chat-bot">
-                                <img className="icon" src={TelegramIcon} alt="Telegram" />
-                                <span>Enabled</span>
-                            </div>
-                            <div className="chat-bot">
-                                <img className="icon" src={WebsiteIcon} alt="Website" />
-                                <span>Enabled</span>
-                            </div>
                         </span>
                     </div>
                 </div>

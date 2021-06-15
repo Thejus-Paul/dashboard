@@ -53,7 +53,7 @@ const SafeVisit = () => {
     }
     calcDuration()
     return(
-        <div className="queries">
+        <div className="queries no-scroll">
             <span className="title">Safe COVID Visit</span>
             <span className="subtitle">Please set the operational time in order to allocate visitor's time.</span>
             <div className="queries-list">
