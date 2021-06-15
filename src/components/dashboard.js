@@ -53,20 +53,6 @@ const Dashboard = () => {
                             <img className="icon" src={CookiesIcon} alt="CookiePoint Icon" />
                             <span className="name">Cookie Point</span>
                         </span>
-                        <span className="chat-bots">
-                            <div className="chat-bot">
-                                <img className="icon" src={WhatsAppIcon} alt="WhatsApp" />
-                                <span>Enabled</span>
-                            </div>
-                            <div className="chat-bot">
-                                <img className="icon" src={TelegramIcon} alt="Telegram" />
-                                <span>Enabled</span>
-                            </div>
-                            <div className="chat-bot">
-                                <img className="icon" src={WebsiteIcon} alt="Website" />
-                                <span>Enabled</span>
-                            </div>
-                        </span>
                     </div>
                 </div>
                 <div className="cards">
