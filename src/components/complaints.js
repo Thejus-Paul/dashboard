@@ -6,7 +6,7 @@ const Complaints = () => {
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/complaints`)
         .then(response => response.json())
-        .then(response => setComplaints(response.complaints));
+        .then(response => setComplaints((response.complaints).reverse()));
     }, [complaints]);
 
     const proceedRequest = (index) => {
