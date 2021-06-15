@@ -15,6 +15,18 @@ const Orders = () => {
         .then(response => setItems(response.items));
     }, [orders]);
 
+    const updateOrderStatus = (index,status) => {
+        orders[index]['order_status'] = status
+        console.log(orders[index])
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/live_orders`, {
+            method: 'post',
+            mode: 'cors',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify(orders.reverse())
+        })
+    }
     return(
         <div className="orders no-scroll">
             <span className="title">Orders</span>
@@ -26,7 +38,14 @@ const Orders = () => {
                             <div className="order" key={index}>
                                 <div className="basic">
                                     <span><strong>Order Number:</strong> #{order['order_id']}</span>
-                                    <span><strong>Order Status:</strong> {order['order_status']}</span>
+                                    <span><strong>Order Status:</strong>&nbsp;
+                                    <select defaultValue={order['order_status']} className="dropdown" onChange={(e) => updateOrderStatus(index,e.target.value)}>
+                                        <option name="Open">Open</option>
+                                        <option name="Out for Delivery">Out for Delivery</option>
+                                        <option name="Ready for pick-up">Ready for pick-up</option>
+                                        <option name="Delivered">Delivered</option>
+                                    </select>
+                                    </span>
                                     <span><strong>Name:</strong> {order['name']}</span>
                                     <span><strong>Address:</strong> {order['address']}</span>
                                     <span><strong>Contact Number:</strong> {order['mobile number']}</span>

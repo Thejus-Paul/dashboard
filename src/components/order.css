@@ -29,3 +29,11 @@
 .order-items thead{
     background-color: #ced5db;
 }
+
+.dropdown {
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #03cf5d;
+    letter-spacing: 1px;
+}
