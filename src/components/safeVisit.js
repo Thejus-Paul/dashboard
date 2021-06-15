@@ -6,9 +6,7 @@ const SafeVisit = () => {
     const [selectedStartTime, handleStartTimeChange] = useState(new Date());
     const [selectedEndTime, handleEndTimeChange] = useState(new Date());
     const [visitors, setVisitors] = useState([]);
-    const [visitorDuration, setVisitorDuration] = useState(0);
-    const visitorCount = visitors.length;
-    
+    const [timeSlots, setTimeSlots] = useState([]);
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/safe_visit`)
         .then(response => response.json())
@@ -16,48 +14,63 @@ const SafeVisit = () => {
     }, [visitors]);
 
     useEffect(() => {
-        setVisitorDuration(calcDuration())
-    }, [selectedStartTime,selectedEndTime]);
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available_slots`)
+        .then(response => response.json())
+        .then(response => setTimeSlots(response.timings));
+    }, [timeSlots]);
 
-    const calcDuration = () => {
-        try {
-            let minVisitorDuration = 30;
-            let endHour = selectedEndTime.c.hour;
-            let startHour = selectedStartTime.c.hour;
-            let endMinute = selectedEndTime.c.minute;
-            let startMinute = selectedStartTime.c.minute;
+    const calcDuration = (event) => {
+        event.preventDefault();
+        let newTimeSlots = [];
+        let visitorDuration = 40;
+        let endHour = selectedEndTime.c.hour;
+        let startHour = selectedStartTime.c.hour;
+        let endMinute = selectedEndTime.c.minute;
+        let startMinute = selectedStartTime.c.minute;
+        let slotCount = 0
 
-            if(endMinute >= startMinute) {
-                let hours = endHour - startHour;
-                let minutes = endMinute - startMinute;
-                let totalMinutes = (hours * 60) + minutes;
-                let calc = Math.round(totalMinutes/visitorCount);
-                if(calc < minVisitorDuration) {
-                    return calc;
-                }
-                return minVisitorDuration;
-            } else {
-                let hours = endHour - startHour - 1;
-                endMinute += 60;
-                let minutes = endMinute - startMinute;
-                let totalMinutes = (hours * 60) + minutes;
-                let calc = Math.round(totalMinutes/visitorCount);
-                if(calc < minVisitorDuration) {
-                    return calc;
-                }
-                return minVisitorDuration;
-            }
-        } catch (error) {
-            console.log(error)
+        if(endMinute >= startMinute) {
+            let hours = endHour - startHour;
+            let minutes = endMinute - startMinute;
+            let totalMinutes = (hours * 60) + minutes;
+            slotCount = Math.floor(totalMinutes/visitorDuration)
+        } else {
+            let hours = endHour - startHour - 1;
+            endMinute += 60;
+            let minutes = endMinute - startMinute;
+            let totalMinutes = (hours * 60) + minutes;
+            slotCount = Math.floor(totalMinutes/visitorDuration)
         }
+        for(;slotCount > 0; --slotCount) {
+            let string = "";
+            string += startHour+":";
+            string += startMinute+" - ";
+            if((visitorDuration + startMinute) >= 60) {
+                let diff = Math.abs(40 - startMinute);
+                startHour += 1;
+                startMinute = diff;
+            } else {
+                startMinute += visitorDuration
+            }
+            string += startHour+":";
+            string += startMinute;
+            newTimeSlots.push({time:string});
+        }
+        fetch(`${process.env.REACT_APP_SUP_PORT_API}/cookiepoint/available_slots`, {
+            method: 'post',
+            mode: 'cors',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify(newTimeSlots)
+        });
     }
-    calcDuration()
     return(
         <div className="queries no-scroll">
             <span className="title">Safe COVID Visit</span>
             <span className="subtitle">Please set the operational time in order to allocate visitor's time.</span>
             <div className="queries-list">
-            <form className="product-form">
+            <form className="product-form" onSubmit={calcDuration}>
             <TimePicker
                 clearable
                 ampm={false}
@@ -72,6 +85,7 @@ const SafeVisit = () => {
                 value={selectedEndTime}
                 onChange={handleEndTimeChange}
             />&nbsp;&nbsp;&nbsp;
+            <button className="submit-btn" type="submit">Set Operation Time</button>
             </form><br />
             </div>
             <table className="order-items" style={{width:"100%"}}>
@@ -85,8 +99,8 @@ const SafeVisit = () => {
                 {
                     visitors.map((visitor,index) => 
                         <tr key={index}>
-                            <td>{visitor.name}</td>
-                            <td>{`${visitorDuration} mins`}</td>
+                            <td>{visitor.customer_name}</td>
+                            <td>{visitor.time}</td>
                         </tr>
                     )
                 }
