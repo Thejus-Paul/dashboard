@@ -43,7 +43,7 @@ const Complaints = () => {
                                             complaint.isClosed ? 
                                             <>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#2ecc71" width="24" height="24" viewBox="0 0 18 18"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
-                                            <font color="green">Closed</font>
+                                            <font color="#2ecc71">Closed</font>
                                             </> :
                                             <>
                                                 <a href={`tel:${complaint.customer_mob_no}`} style={{backgroundColor: 'transparent'}}>
