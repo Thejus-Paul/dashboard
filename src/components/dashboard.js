@@ -44,7 +44,7 @@ const Dashboard = () => {
       ];
       
     return(
-        <div className="dashboard">
+        <div className="dashboard no-scroll">
             <div className="col">
                 <span className="title">Welcome {username.split(' ')[0]}!</span>
                 <div className="cards">

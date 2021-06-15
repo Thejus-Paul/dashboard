@@ -25,7 +25,7 @@ const Complaints = () => {
     }
 
     return(
-        <div className="complaints">
+        <div className="complaints no-scroll">
             <span className="title">Customer Complaints</span>
             <span className="subtitle">Your customers expression of dissatisfaction can be found here</span>
 

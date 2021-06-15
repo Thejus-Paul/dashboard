@@ -33,7 +33,7 @@ const Negotiation = () => {
     }
     
     return(
-        <div className="queries">
+        <div className="queries no-scroll">
             <span className="title">Customer Negotiations</span>
             <span className="subtitle">Your upcoming customer negotiations can be found here.</span>
             <div className="queries-list">

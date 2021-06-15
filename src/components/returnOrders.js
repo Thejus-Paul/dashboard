@@ -40,7 +40,7 @@ const ReturnOrders = () => {
     }
 
     return(
-        <div className="queries">
+        <div className="queries no-scroll">
             <span className="title">Return Orders</span>
             <span className="subtitle">All the return requests for your products can be found here.</span>
             <div className="queries-list">            

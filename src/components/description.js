@@ -22,7 +22,7 @@ const Description = () => {
     }
         
     return(
-        <div className="description">
+        <div className="description no-scroll">
             <span className="title">Product Description</span>
             <span className="subtitle">Paste your product or service description here to let us answer your queries.</span>
             <form className="description-form" onSubmit={handleResponse}>

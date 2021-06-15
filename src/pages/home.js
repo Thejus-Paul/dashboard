@@ -61,7 +61,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="main">
-                <div className="nav">
+                <div className="nav no-scroll">
                     <NavLink exact className="hyperlink" activeClassName="active" to='/home'  onClick={() => { history.push('/home'); window.location.reload()}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg> 
                         <span className="location">Dashboard</span>
@@ -122,6 +122,7 @@ const Home = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>  
                         <span className="location">Complaints</span>
                     </NavLink>
+                    <br/>
                 </div>
                 <div className="content">
                     <Router>

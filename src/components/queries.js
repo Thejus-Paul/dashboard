@@ -22,7 +22,7 @@ const Queries = () => {
     }
 
     return(
-        <div className="queries">
+        <div className="queries no-scroll">
             <span className="title">Customer Queries</span>
             <span className="subtitle">The queries that were left unresolved can be found here. You can call the customer to resolve their queries. You may also update the abstract for the future customers.</span>
             <div className="queries-list">            

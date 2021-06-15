@@ -11,7 +11,7 @@ const Subscriptions = () => {
     }, [subscriptions]);
     
     return(
-        <div className="queries">
+        <div className="queries no-scroll">
             <span className="title">Subscriptions</span>
             <span className="subtitle">This page lets you see all the subscribers who opted for notifications of new offers.</span>
             <div className="queries-list">            
