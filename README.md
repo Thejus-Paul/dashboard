@@ -1,4 +1,4 @@
-<img src="/public/support.svg" alt="SUP PORT Icon" width="175px" />
+<img src="/public/android-chrome-192x192.png" alt="SUP PORT Icon" width="175px" />
 
 # dashboard
 
