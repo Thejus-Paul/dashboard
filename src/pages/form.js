@@ -50,7 +50,7 @@ export default function Form() {
             for(let item of items) {
                 total += (newOrder[item.name]) * item.price;
             }
-            newOrder["order_id"] = liveOrders.length + 1;
+            newOrder["order_id"] = "TID"+(liveOrders.length + 1);
             newOrder["order_status"] = "Open";
             console.log(newOrder);
             setTotal(total);
@@ -70,6 +70,7 @@ export default function Form() {
                                     <div>
                                         <br/>
                                         <h3>Order Summary</h3><br/>
+                                        <span><strong>Order Id: {newOrder.order_id}</strong></span><br/>
                                         <span><strong>Name:</strong> {newOrder.name}</span><br/>
                                         <span><strong>Address:</strong> {newOrder.address}</span><br/>
                                         <span><strong>Items</strong></span><br/>
