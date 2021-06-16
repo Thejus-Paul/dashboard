@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DateTimePicker } from "@material-ui/pickers";
 import './queries.css';
 
-const Negotiation = () => {
+const Negotiations = () => {
     const [selectedDate, handleDateChange] = useState(new Date().getTime());
     const [availableTimings, setAvailableTimings] = useState([]);
     const [bookedTimings, setBookedTimings] = useState([]);
@@ -84,4 +84,4 @@ const Negotiation = () => {
     )
 }
 
-export default Negotiation;
+export default Negotiations;

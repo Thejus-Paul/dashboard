@@ -80,7 +80,6 @@ export default function Login(props) {
                         <button className="login-btn" type="submit">Login</button>
                     </form>
                     <div className="additional-features">
-                        <a href="/forgot_password">Forgot Password</a>
                         <span>Not on Sup Port yet?&nbsp;
                             <NavLink exact to='/register'>Register</NavLink>
                         </span>
